@@ -8,7 +8,9 @@ use App\message;
 
 class backendServer extends Controller
 {
-    public $index = 0;
+    public function index(){
+        return view('index');
+    }
 
     public function unauthenticatedRoute(Request $request){    
         if(Cache::has($request->key)){
