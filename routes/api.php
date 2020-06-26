@@ -18,3 +18,6 @@ use Illuminate\Http\Request;
 // });
 
 Route::put('credential','backendServer@unauthenticatedRoute')->name('unauthenticatedRoute');
+Route::post('message','backendServer@authenticatedMessage')->name('authenticatedMessage');
+Route::get('message/{id}','backendServer@messagefindId')->name('messagefindId');
+Route::get('messages/{tags}','backendServer@messagefindTags')->name('messagefindTags');
