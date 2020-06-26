@@ -13,6 +13,11 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::put('credential','backendServer@unauthenticatedRoute')->name('unauthenticatedRoute');
+Route::post('message','backendServer@authenticatedMessage')->name('authenticatedMessage');
+Route::get('message/{id}','backendServer@messagefindId')->name('messagefindId');
+Route::get('messages/{tags}','backendServer@messagefindTags')->name('messagefindTags');
